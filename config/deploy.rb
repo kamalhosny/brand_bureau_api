@@ -35,13 +35,13 @@ namespace :deploy do
   desc 'Symlinks Secret.yml to the release path'
   task :secret_symlink do
     on roles(:app) do
-      execute "sudo ln -nfs #{shared_path}/secrets.yml #{release_path}/config/secrets.yml"
+      execute "sudo ln -nfs #{shared_path}/secrets.yml.key #{release_path}/config/secrets.yml.key"
     end
   end
 
   after  :updating,     :secret_symlink
   after  :updating,     :nginx_symlink
-  # after  :finishing,    :compile_assets
+  after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
