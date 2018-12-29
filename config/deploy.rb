@@ -29,19 +29,19 @@ namespace :deploy do
 
       execute "sudo ln -nfs #{current_path}/config/nginx.rb /etc/nginx/sites-enabled/#{fetch(:domain)}"
       execute "sudo ln -nfs   /config/nginx.rb /etc/nginx/sites-available/#{fetch(:domain)}"
-   end
+    end
   end
 
   desc 'Symlinks Secret.yml to the release path'
   task :secret_symlink do
     on roles(:app) do
       execute "sudo ln -nfs #{shared_path}/secrets.yml #{release_path}/config/secrets.yml"
-   end
+    end
   end
 
   after  :updating,     :secret_symlink
   after  :updating,     :nginx_symlink
-  after  :finishing,    :compile_assets
+  # after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
@@ -54,3 +54,4 @@ namespace :logs do
     end
   end
 end
+
