@@ -55,3 +55,5 @@ namespace :logs do
   end
 end
 
+append :linked_files, "config/secrets.yml.key"
+
