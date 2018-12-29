@@ -61,4 +61,5 @@ namespace :logs do
 end
 
 append :linked_files, "config/secrets.yml.key"
+append :linked_files, "config/database.yml"
 
