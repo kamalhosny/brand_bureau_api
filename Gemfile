@@ -6,7 +6,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave', '~> 1.0'
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
-gem 'fog'
+gem 'fog-aws'
 gem 'jwt', '~> 1.5', '>= 1.5.6'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 gem 'puma', '~> 3.11'
