@@ -38,7 +38,6 @@ namespace :deploy do
     end
   end
 
-  after  :updating,     :secret_symlink
   after  :updating,     :nginx_symlink
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
