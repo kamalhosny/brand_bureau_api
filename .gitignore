@@ -17,5 +17,5 @@
 
 /config/database.yml
 
-.ruby_gemset
-.ruby_version
+.ruby-gemset
+.ruby-version
