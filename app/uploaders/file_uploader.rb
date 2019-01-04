@@ -17,13 +17,13 @@ class FileUploader < CarrierWave::Uploader::Base
   end
 
   # Create different versions of your uploaded files:
-  version :thumb, if: :image? do
-    process resize_to_fit: [50, 50]
-  end
+  # version :thumb, if: :image? do
+  #   process resize_to_fit: [50, 50]
+  # end
 
-  version :medium, if: :image? do
-    process resize_to_fit: [200, 200]
-  end
+  # version :medium, if: :image? do
+  #   process resize_to_fit: [200, 200]
+  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -31,7 +31,7 @@ class FileUploader < CarrierWave::Uploader::Base
     %w[jpg jpeg png svg 3gp mp4 wmv rmvb]
   end
 
-  def image?(new_file)
-    new_file.content_type.start_with? 'image'
-  end
+  # def image?(new_file)
+  #   new_file.content_type.start_with? 'image'
+  # end
 end
