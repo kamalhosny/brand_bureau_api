@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
-    render json: @projects.to_json(include: { :attachments, preview_image: { only: :file } })
+    render json: @projects.to_json(include: { attachments: { only: :file }, preview_image: { only: :file } })
   end
 
   def show
