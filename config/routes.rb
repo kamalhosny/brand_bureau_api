@@ -4,4 +4,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :projects
+  resources :contacts
+
+  get '/about', to: 'about#show'
+  put '/about', to: 'about#update'
 end
