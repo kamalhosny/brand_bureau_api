@@ -1,3 +1,3 @@
 class Contact < ApplicationRecord
-  validate :label, :content, presence: true
+  validates :label, :content, presence: true
 end
